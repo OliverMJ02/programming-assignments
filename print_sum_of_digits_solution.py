@@ -7,7 +7,8 @@ def print_sum_of_digits(x: int) -> str:
     b: int = (x - a * 100) // 10
     c: int = x - a * 100 - b * 10
     y: str = str(a + b + c)
-    return print(y)
+    print(y)
+    return y
 
 
 ### END SOLUTION
