@@ -1,5 +1,5 @@
 # solution cell
-### BEGIN SOLUTION
+### BEGIN SOLUTION, "fields" was not required (defined age in __init__())
 import datetime
 from dataclasses import dataclass
 
