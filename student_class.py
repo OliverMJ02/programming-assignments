@@ -1,25 +1,26 @@
 # solution cell
 ### BEGIN SOLUTION
-import datetime
-from dataclasses import dataclass
 from typing import Optional
 
+from person_class import Person
 
-@dataclass
-class Student:
+
+class Student(Person):
     def __init__(
         self,
         name: str,
-        birthdate: datetime.date,
         person_number: str,
-        phone_number: Optional[str],
-        address: Optional[str],
+        program: str,
+        phone_number: Optional[str] = None,
+        address: Optional[str] = None,
     ) -> None:
-        self.nm: str = name
-        self.bd: datetime.date = birthdate
-        self.prsn: str = person_number
-        self.phn: Optional[str] = phone_number
-        self.adr: Optional[str] = address
+        super().__init__(name, "Student", person_number, phone_number, address)
+        self.program = program
+
+    def print(self) -> None:
+        st = super().__repr__()
+        st += f"\t{self.program}"
+        print(st)
 
 
 ### END SOLUTION

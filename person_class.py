@@ -1,30 +1,30 @@
 # solution cell
 ### BEGIN SOLUTION
+from dataclasses import dataclass
 from typing import Optional
 
 
+@dataclass
 class Person:
-    def __init__(
-        self,
-        name: str,
-        role: str,
-        persn: str,
-        addr: Optional[str] = None,
-        phonen: Optional[str] = None,
-    ) -> None:
-        self.p: list[str | None] = [name, role, persn, addr, phonen]
+    name: str
+    role: str
+    person_number: str
+    phone_number: Optional[str] = None
+    address: Optional[str] = None
 
     def __repr__(self) -> str:
-        r: str = ""
-        t: int = 0
-        for i in self.p:
-            if i is not None and t == 0:
-                r = r + i
-                t = 1
-            elif i is not None:
-                r = r + "\t" + i
-        print(r)
-        return r
+        outp = ""
+        ls = [
+            self.name,
+            self.role,
+            self.person_number,
+            self.phone_number,
+            self.address,
+        ]
+        for item in ls:
+            if item is not None:
+                outp += str(item) + "\t"
+        return outp.strip()
 
 
 ### END SOLUTION
