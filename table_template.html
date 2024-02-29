@@ -1,0 +1,18 @@
+<!--  BEGIN SOLUTION  -->
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for v in values %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ v }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<!-- END SOLUTION  -->
