@@ -1,9 +1,10 @@
 import csv
 import requests
 
+
 def calculate_maxprofit_by_itemtype() -> dict[str, float]:
     itemtype_profit_dict: dict[str, float] = {}
-    response: str = requests.get("https://onu1.s2.chalmers.se/datasets/Europe_Sales_Records.csv")
+    response = requests.get("https://onu1.s2.chalmers.se/datasets/Europe_Sales_Records.csv")
     with open("sales_data.csv", "wt", encoding="UTF-8") as csv_file:
         csv_file.write(response.text)
     with open("sales_data.csv", "rt", encoding="UTF-8") as csv_reader:
@@ -21,6 +22,7 @@ def calculate_maxprofit_by_itemtype() -> dict[str, float]:
         except Exception:
             print("There was a problem with processing of the data :(")
     return itemtype_profit_dict
+
 
 profit_by_type = calculate_maxprofit_by_itemtype()
 print(profit_by_type)
